@@ -1,0 +1,48 @@
+{
+"loan": [
+    {
+    "id": 1,
+    "loan_number": "23455230033",
+    "total_funds": 60000,
+    "collateral_id": 1,
+    "budget_id": 1
+    }
+],
+"budget": [
+    {
+    "id": 1,
+    "total_budget": 60000,
+    "total_budgeted": 0,
+    "items": [
+        {
+            "type": "fee",
+            "name": "Architecture",
+            "budget_amount": 0,
+            "progress": 0,
+            "funded_to_date": 0
+        },
+        {
+            "type": "rsrv",
+            "name": "Plans",
+            "budget_amount": 0,
+            "progress": 0,
+            "funded_to_date": 0
+        },
+        {
+            "type": "soft",
+            "name": "Permits",
+            "budget_amount": 0,
+            "progress": 0,
+            "funded_to_date": 0
+        }
+    ] 
+}
+],
+"collateral": [
+    {
+    "id": 1,
+    "amount": 40000,
+    "borrower": 10000
+}
+]
+}

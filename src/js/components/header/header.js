@@ -1,10 +1,21 @@
-const Header = props => (
+import { connect } from "react-redux";
+
+const mapStateToProps = state => {
+    return { 
+        loan: state.common.loan,
+        budget: state.common.budget
+    };
+  };
+
+const ConnectedHeader = ({loan, budget}) => (
     <div>
         <h1>Create Project Budget</h1>
-        <h2>Total Funds: ${props.loan.total_funds}</h2>
-        <h2>Total Budget: ${props.budget.total_budget}</h2>
-        <h3>Loan Number: #{props.loan_number}</h3>
+        <h2>Total Funds: ${loan.total_funds}</h2>
+        <h2>Total Budget: ${budget.total_budget}</h2>
+        <h3>Loan Number: #{loan.loan_number}</h3>
     </div>
 )
+
+const Header = connect(mapStateToProps)(ConnectedHeader)
 
 export default Header 

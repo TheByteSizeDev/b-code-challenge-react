@@ -1,36 +1,32 @@
-import { connect } from 'react-redux';
-// import {useEffect} from 'react'
-// import { APP_LOADED } from '../constants/action-types';
+import React, {useState, useEffect} from 'react'
 import './App.css';
+import APIManager from "../../API/APIManager.js"
 import Grid from './grid/grid.js'
 import Header from './header/header.js'
 
-const mapStateToProps = state => {
-  return {
-    budget: state.budget,
-    loan: state.loan
-  }
-}
+const App = props => {
 
-// const mapDispatchToProps = dispatch => ({
-//   onLoad: () =>
-//     dispatch({ type: APP_LOADED})
-// })
+  const [budget, setBudget] = useState([])
+  const [loan, setLoan] = useState([])
+  const [collateral, setCollateral] = useState([])
 
-const App = () => {
-//   useEffect( () => {
-//     this.props.onLoad()
-//  }, []);
+  useEffect(() => {
+    APIManager.all().then(data => {
+      const budgetData = data.budget
+      const loanData = data.loan
+      const collateralData = data.collateral
+      setBudget(budgetData[0]);
+      setLoan(loanData[0]);
+      setCollateral(collateralData[0]);
+    })
+  }, []);
 
   return (
-  <div>
-    <Header
-    budget={this.props.budget}
-    loan={this.props.loan}
-     />
-    <Grid />
-  </div>
+    <div>
+      <Header/>
+      <Grid />
+    </div>
   )
 }
 
-export default connect(mapStateToProps)(App)
+export default App

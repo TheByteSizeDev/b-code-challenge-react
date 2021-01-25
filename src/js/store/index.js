@@ -1,6 +1,13 @@
 import { createStore } from "redux";
-import reducer from '../reducers/reducer'
+import { combineReducers } from 'redux';
+import budgetReducer from '../reducers/budget'
+import loanReducer from '../reducers/loan.js'
+import collateralReducer from '../reducers/collateral.js'
 
-const store = createStore(reducer);
+const store = createStore(combineReducers({
+    budgetReducer,
+    loanReducer,
+    collateralReducer
+}));
 
 export default store;
