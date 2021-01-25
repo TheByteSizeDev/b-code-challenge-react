@@ -16,12 +16,7 @@ class Grid extends React.Component {
                 {headerName: 'Funded To Date', field: 'funded', editable: true},
                 {headerName: 'Remaining', field: 'remaining'}
             ],
-            rowData: [
-                { type: 'soft', name: 'Permits', budget: 50000, progress: 0, funded: 0, remaining: 50000},
-                { type: 'soft', name: 'Permits', budget: 50000, progress: 0, funded: 0, remaining: 50000},
-                { type: 'soft', name: 'Permits', budget: 50000, progress: 0, funded: 0, remaining: 50000}
-            ]
-
+            rowData: this.props.budget.items
         };
     }
 

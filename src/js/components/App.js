@@ -23,8 +23,13 @@ const App = props => {
 
   return (
     <div>
-      <Header/>
-      <Grid />
+      <Header
+      budget={budget}
+      loan={loan}
+      />
+      <Grid 
+      budget={budget}
+      />
     </div>
   )
 }
